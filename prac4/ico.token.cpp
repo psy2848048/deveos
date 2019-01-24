@@ -79,14 +79,9 @@ extern "C" {
         if(name{action} == "onerror"_n) {
             eosio_assert(name{code} == "eosio"_n, "onerror action's are only valid from \"eosio\" system account");
         }
-        if( (code == receiver && name{action} != "invest"_n) || (name{code} == "icotoken"_n && name{action} == "invest"_n) || (name{action} == "onerror"_n) ) {
+        if( (code == receiver && name{action} != "transfer"_n) || (name{code} == "bryanrhee"_n && name{action} == "transfer"_n) || (name{action} == "onerror"_n) ) {
             switch( action ) {
-                EOSIO_DISPATCH_HELPER( icotoken::token, (invest) )
-            }
-        } else {
-            
-            switch( action ) {
-                EOSIO_DISPATCH_HELPER( icotoken::token, (issue)(transfer) )
+                EOSIO_DISPATCH_HELPER( icotoken::token, (issue)(transfer)(invest) )
             }
         }
     }
