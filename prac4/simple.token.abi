@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Mon Jan 21 00:03:56 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Thu Jan 24 15:55:20 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
@@ -13,6 +13,16 @@
                 {
                     "name": "balance",
                     "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "delrecord",
+            "base": "",
+            "fields": [
+                {
+                    "name": "rec_id",
+                    "type": "uint64"
                 }
             ]
         },
@@ -85,6 +95,11 @@
     ],
     "types": [],
     "actions": [
+        {
+            "name": "delrecord",
+            "type": "delrecord",
+            "ricardian_contract": ""
+        },
         {
             "name": "issue",
             "type": "issue",

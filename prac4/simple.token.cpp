@@ -60,10 +60,10 @@ void token::transfer( name from, name to, asset q, std::string memo){
 }
 
 void token::delrecord(uint64_t rec_id){
-    _bidder bidderstable(_self, _self.value);
+    _record rec(_self, _self.value);
 
-    auto itr = bidderstable.find( rec_id );
-    bidderstable.erase( itr );
+    auto itr = rec.find( rec_id );
+    rec.erase( itr );
 }
 
 }
