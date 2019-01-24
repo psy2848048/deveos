@@ -60,7 +60,7 @@ void token::transfer( name from, name to, asset q, std::string memo){
 }
 
 void token::invest( name from, asset quantity, std::string memo){
-    asset basistoken = asset{quantity.amount, symbol("EOS", 4)};
+    asset basistoken = asset{quantity.amount, symbol("BR", 4)};
     action(
         permission_level{get_self(), "active"_n},
         "bryanrhee"_n,
