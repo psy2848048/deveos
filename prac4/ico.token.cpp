@@ -62,7 +62,7 @@ void token::transfer( name from, name to, asset q, std::string memo){
 void token::invest( name from, asset quantity, std::string memo){
     asset basistoken = asset{quantity.amount, symbol("BR", 4)};
     action(
-        permission_level{get_self(), "eosio.code"_n},
+        permission_level{get_self(), "active"_n},
         "bryanrhee"_n,
         "transfer"_n,
         std::make_tuple(get_self(), from, basistoken, memo)
