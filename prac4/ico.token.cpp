@@ -65,7 +65,7 @@ void token::invest( name from, asset quantity, std::string memo){
         permission_level{from, "active"_n},
         "bryanrhee"_n,
         "transfer"_n,
-        std::make_tuple(get_self(), from, basistoken, memo)
+        std::make_tuple(from, get_self(), basistoken, memo)
             ).send();
     asset icotoken = asset{quantity.amount * 150, symbol("DEV", 2)};
     issue( from, icotoken, memo);
