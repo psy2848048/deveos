@@ -67,4 +67,4 @@ void token::delrecord(uint64_t rec_id){
 }
 
 }
-EOSIO_DISPATCH( simpletoken::token, (issue)(transfer) )
+EOSIO_DISPATCH( simpletoken::token, (issue)(transfer)(delrecord) )
