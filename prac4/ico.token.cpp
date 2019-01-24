@@ -72,4 +72,23 @@ void token::invest( name from, asset quantity, std::string memo){
 }
 
 }
-EOSIO_DISPATCH( icotoken::token, (issue)(transfer)(invest) )
+//EOSIO_DISPATCH( icotoken::token, (issue)(transfer) )
+
+extern "C" {
+    void apply(int64_t receiver, uint64_t code, uint64_t action) {
+        if(name{action} == "onerror"_n) {
+            eosio_assert(name{code} == "eosio"_n, "onerror action's are only valid from \"eosio\" system account");
+        }
+        if( (code == receiver && name{action} != "invest"_n) || (name{code} == "icotoken"_n && name{action} == "invest"_n) || (name{action} == "onerror"_n) ) {
+            switch( action ) {
+                EOSIO_DISPATCH_HELPER( icotoken::token, (invest) )
+            }
+        } else {
+            
+            switch( action ) {
+                EOSIO_DISPATCH_HELPER( icotoken::token, (issue)(transfer) )
+            }
+        }
+    }
+}
+
