@@ -28,8 +28,6 @@ void token::sub_balance(name payer, name to, asset q, std::string memo){
     auto toitr = acc.find( to.value );
     acc.modify( toitr, _self, [&]( auto& a ){
         eosio_assert(a.balance >= q, "Not enough token balance" );
-
-        eosio_assert(a.balance >= q, "Not enough token balance" );
         a.balance -= q;
     });
 }
@@ -61,5 +59,12 @@ void token::transfer( name from, name to, asset q, std::string memo){
     });
 }
 
+void token::delrecord(uint64_t rec_id){
+    _record rec(_self, _self.value);
+
+    auto itr = rec.find( rec_id );
+    rec.erase( itr );
 }
-EOSIO_DISPATCH( simpletoken::token, (issue)(transfer) )
+
+}
+EOSIO_DISPATCH( simpletoken::token, (issue)(transfer)(delrecord) )
