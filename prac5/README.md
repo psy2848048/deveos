@@ -6,6 +6,9 @@
 1. Signature를 받아 Tx에 삽입한다
 1. Push Action을 한다.
 
+# Private EOSIO가 JSON RPC API Request를 잘 듣지 않는 이유?
+1. 
+
 # Backend 서버와 EOSIO를 붙이는 방법
 1. Contract를 개발하여 Mainnet / Testnet에 Deploy한다
 1. Nodejs - eosjs2 / Python - libeospy 사용
