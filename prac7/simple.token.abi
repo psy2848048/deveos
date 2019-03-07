@@ -1,0 +1,224 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Mon Mar  4 23:29:29 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "account",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "balance",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "addauth",
+            "base": "",
+            "fields": [
+                {
+                    "name": "authorizing",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "authority",
+            "base": "",
+            "fields": [
+                {
+                    "name": "authorized",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "checkpoint",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "time_sec",
+                    "type": "uint32"
+                },
+                {
+                    "name": "balance",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "createchkpt",
+            "base": "",
+            "fields": [
+                {
+                    "name": "self",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "delauth",
+            "base": "",
+            "fields": [
+                {
+                    "name": "authorized",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "delrecord",
+            "base": "",
+            "fields": [
+                {
+                    "name": "rec_id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "issue",
+            "base": "",
+            "fields": [
+                {
+                    "name": "self",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "record",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "amount",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "addauth",
+            "type": "addauth",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "createchkpt",
+            "type": "createchkpt",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delauth",
+            "type": "delauth",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delrecord",
+            "type": "delrecord",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "issue",
+            "type": "issue",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "accounts",
+            "type": "account",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "authorities",
+            "type": "authority",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "checkpoints",
+            "type": "checkpoint",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "record",
+            "type": "record",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": [],
+    "abi_extensions": []
+}
